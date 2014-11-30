@@ -25,16 +25,15 @@
 
 using namespace std;
 
+struct Word 
+{
+    string word;
+    int line;
+    int column;
+};
+
 class Reader {
 protected:
-
-    struct Word {
-        string word;
-        int line;
-        int column;
-
-    };
-
     vector<Word> vectorOfWords;
 
 
@@ -42,12 +41,9 @@ public:
     Reader();
 
     void loadFile(string fileName);
-//    void displayInput();
+    void clear();
    
-    
-    
     friend class HashClass;
-    
 };
 
 #endif	/* READER_H */
