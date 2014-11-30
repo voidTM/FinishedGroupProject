@@ -19,10 +19,12 @@ Reader::Reader() {
 }
 
 void Reader::loadFile(string fileName) {
+    if(vectorOfWords.size() > 0)    //checks the Reader for previous uses and erases the data from them.
+        vectorOfWords.empty();  
     ifstream inputFile;
     
     inputFile.open(fileName.c_str()); // Open file
-    if (!inputFile.is_open()) // Validate if file can be opened
+    if (!inputFile.good()) // Validate if file can be opened
     {
         cout << "The file could not be opened. Program is terminating." << endl;
         exit(1);
@@ -66,7 +68,11 @@ void Reader::loadFile(string fileName) {
 //    cout << "size" << vectorOfWords.size() << endl;
 } // end loadFile
 
-
+//Returns the vector of all the words 
+vector<Word> getInput()
+{
+    return vectorOfWords;
+}
 
 
 
