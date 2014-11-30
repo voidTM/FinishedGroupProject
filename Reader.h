@@ -40,9 +40,9 @@ protected:
 public:
     Reader();
 
-    void loadFile(string fileName);
-    void clear();
-   
+    void lowadFile(string fileName);
+    vector<Word> getInput();
+    
     friend class HashClass;
 };
 
